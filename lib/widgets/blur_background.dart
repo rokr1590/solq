@@ -4,13 +4,15 @@ import 'package:flutter/material.dart' ;
 
 class FrostWidget extends StatelessWidget {
   final Widget child;
-  const FrostWidget({Key? key,required this.child}) : super(key: key);
+  late double xSigma;
+  late double ySigma;
+  FrostWidget({Key? key,required this.child,required this.ySigma,required this.xSigma}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ClipRect(
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 50,sigmaY: 50),
+        filter: ImageFilter.blur(sigmaX: xSigma,sigmaY: ySigma),
         child: Container(
           width: MediaQuery.sizeOf(context).width,
           height: MediaQuery.sizeOf(context).height,

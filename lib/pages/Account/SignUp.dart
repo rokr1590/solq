@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:soloq/utils/image_constant.dart';
 import 'package:soloq/widgets/auth_login_widget.dart';
 import 'package:soloq/widgets/blur_background.dart';
+import 'package:soloq/widgets/custom_circle.dart';
 import 'package:soloq/widgets/custom_textform_field.dart';
 
 import '../../theme/app_style.dart';
@@ -41,28 +42,16 @@ class _SignUpState extends State<SignUp> {
                     Positioned(
                       right: MediaQuery.sizeOf(context).width*0.5,
                       top: MediaQuery.sizeOf(context).height*0.10,
-                      child:Container(
-                          width: 345,
-                          height: 300,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xff36bed9), Color(0xff248bf2)], ),
-                          ),
-                        ),
+                      child:const CustomCircle(colorList: [Color(0xff36bed9), Color(0xff248bf2)], cHeight: 345, cWidth: 300)
                     ),
                     Positioned(
                       left: MediaQuery.sizeOf(context).width*0.50,
                       bottom: MediaQuery.sizeOf(context).height*0.10,
-                      child:Container(
-                          width: 358,
-                          height: 300,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xff7a24f2), Color(0xffe539ac)], ),
-                          ),
-                        ),
+                      child:const CustomCircle(colorList: [Color(0xff7a24f2), Color(0xffe539ac)], cHeight: 358, cWidth: 300),
                     ),
                     FrostWidget(
+                        xSigma: 50,
+                        ySigma: 50,
                         child: Container(
                           margin: const EdgeInsets.all(16.0),
                           padding: const EdgeInsets.fromLTRB(20, 0, 10, 16),

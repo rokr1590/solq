@@ -41,4 +41,13 @@ class AppStyle {
     fontWeight: FontWeight.w300,
   );
 
+  static TextStyle txtJosefinSansSemiBold20 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: getFontSize(
+      20,
+    ),
+    fontFamily: 'Josefin Sans',
+    fontWeight: FontWeight.w600,
+  );
+
 }
