@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "SoloQ",
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoutes.customscreen,
+      initialRoute: AppRoutes.splashScreen,
       routes: AppRoutes.routes//WelcomePage(),
     );
   }

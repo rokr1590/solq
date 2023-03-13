@@ -128,7 +128,9 @@ class _SplashScreenState extends State<SplashScreen> {
                               borderRadius: BorderRadius.circular(30.0),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, AppRoutes.logInScreen);
+                          },
                           child: const Text(
                               "Log in",
                               style:TextStyle(color: Colors.white, fontSize: 24)

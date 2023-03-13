@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:soloq/utils/color_constant.dart';
+import 'package:soloq/utils/image_constant.dart';
 import 'package:soloq/widgets/blur_background.dart';
 import 'package:soloq/widgets/custom_circle.dart';
 import 'package:soloq/theme/app_style.dart';
 import 'package:soloq/utils/size_utils.dart';
+import 'package:soloq/widgets/recent_survey_card_widget.dart';
+import 'package:soloq/widgets/survey_card_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -12,6 +17,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final ScrollController _controller = ScrollController();
+  final double _width = 100.0;
+  void _animateToIndex(int index) {
+    _controller.animateTo(
+      index * _width,
+      duration: Duration(seconds: 2),
+      curve: Curves.fastOutSlowIn,
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -95,10 +109,56 @@ class _HomeScreenState extends State<HomeScreen> {
                                     style: AppStyle.txtJosefinSansLight16,
                                   ),
                                 ),
+                                SizedBox(height: 30,),
+                                Container(
+                                  height: MediaQuery.sizeOf(context).height*0.16,
+                                  width: MediaQuery.sizeOf(context).width*0.90,
+                                  child: ListView.builder(
+                                    controller: _controller,
+                                    scrollDirection: Axis.horizontal,
+                                      itemCount: 5,
+                                      itemBuilder: (BuildContext context,int index){
+                                        return RecentSurveyCard(customImg: ImageConstant.igRobot,qAnswered: 3,totalQuestions: 10);
+                                      }
+                                  ),
+                                )
                               ],
                             ),
                           ),
                         ),
+                        Container(
+                          margin: getMargin(left: 25,bottom: 10),
+                          child: Text(
+                            "Surveys",
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.left,
+                            style: AppStyle.txtJosefinSansSemiBold20,
+                          ),
+                        ),
+                        Expanded(
+                          child: ListView.builder(
+                            itemCount: 5,
+                            itemBuilder: (BuildContext context,int index){
+                              return Column(
+                                children: [
+                                  Container(
+                                    margin: getMargin(bottom: 20),
+                                    child: SurveyCard(
+                                      customChipText: "Technology",
+                                      customChipColor: ColorConstant.cyan400,
+                                      noOfPoints: 10,
+                                      noOfQuestions: 10,
+                                      cardTitle:"AI Technology",
+                                      cardSubtext: "This is a survey about AI technology. ",
+                                      customImg: ImageConstant.igRobot,
+                                    ),
+                                  ),
+                                ],
+                              );
+                            },
+                          ),
+                        )
+
                       ],
                     )
                 )

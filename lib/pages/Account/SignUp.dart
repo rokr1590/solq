@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:soloq/routes/app_routes.dart';
 import 'package:soloq/utils/image_constant.dart';
 import 'package:soloq/widgets/auth_login_widget.dart';
 import 'package:soloq/widgets/blur_background.dart';
@@ -124,7 +125,9 @@ class _SignUpState extends State<SignUp> {
                                       borderRadius: BorderRadius.circular(30.0),
                                     ),
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, AppRoutes.customscreen);
+                                  },
                                   child: const Text(
                                       "Sign Up",
                                       style:TextStyle(color: Colors.white, fontSize: 24,fontWeight: FontWeight.w400)

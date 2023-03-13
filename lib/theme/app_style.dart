@@ -14,6 +14,21 @@ class AppStyle {
     fontWeight: FontWeight.w300,
   );
 
+  static TextStyle txtJosefinSansLight16Black = TextStyle(
+      color: Colors.black,
+      fontSize: getFontSize(
+          12
+      ),
+      fontFamily: "Josefin Sans"
+  );
+  static TextStyle txtJosefinSansLight10Black = TextStyle(
+      color: Colors.black,
+      fontSize: getFontSize(
+          10
+      ),
+      fontFamily: "Josefin Sans"
+  );
+
   static TextStyle txtJosefinSansSemiBold36 = TextStyle(
     color: ColorConstant.whiteA700,
     fontSize: getFontSize(
@@ -21,6 +36,20 @@ class AppStyle {
     ),
     fontFamily: 'Josefin Sans',
     fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtJosefinSansLight12 =TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: 12,
+    fontFamily: "Josefin Sans",
+    fontWeight: FontWeight.w300,
+  );
+
+  static TextStyle txtJosefinSansLight13Black =TextStyle(
+    color: ColorConstant.black900,
+    fontSize: 13,
+    fontFamily: "Josefin Sans",
+    fontWeight: FontWeight.w300,
   );
 
   static TextStyle txtJosefinSansLight16 = TextStyle(
@@ -45,6 +74,15 @@ class AppStyle {
     color: ColorConstant.whiteA700,
     fontSize: getFontSize(
       20,
+    ),
+    fontFamily: 'Josefin Sans',
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle txtJosefinSansSemiBold16 = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: getFontSize(
+      16,
     ),
     fontFamily: 'Josefin Sans',
     fontWeight: FontWeight.w600,

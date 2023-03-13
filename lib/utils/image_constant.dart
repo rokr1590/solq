@@ -9,5 +9,7 @@ class ImageConstant {
 
   static String iconBag = 'assets/images/bag.png';
 
+  static String igRobot = 'assets/images/ai_robot.jpg';
+
   //static String imageNotFound = 'assets/images/image_not_found.png';
 }

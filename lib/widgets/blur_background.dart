@@ -6,7 +6,9 @@ class FrostWidget extends StatelessWidget {
   final Widget child;
   late double xSigma;
   late double ySigma;
-  FrostWidget({Key? key,required this.child,required this.ySigma,required this.xSigma}) : super(key: key);
+  late double? fwidth;
+  late double? fheight;
+  FrostWidget({Key? key,required this.child,required this.ySigma,required this.xSigma,this.fheight,this.fwidth}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +16,11 @@ class FrostWidget extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: xSigma,sigmaY: ySigma),
         child: Container(
-          width: MediaQuery.sizeOf(context).width,
-          height: MediaQuery.sizeOf(context).height,
+          width: fwidth??MediaQuery.sizeOf(context).width,
+          height: fheight??MediaQuery.sizeOf(context).height,
           decoration: BoxDecoration(
-              color: Colors.grey.shade200.withOpacity(0)
+              borderRadius: BorderRadius.circular(50),
+              color: Colors.grey.shade200.withOpacity(0),
           ),
           child: child
         ),
